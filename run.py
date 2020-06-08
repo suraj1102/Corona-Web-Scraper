@@ -93,7 +93,7 @@ class WebScraper():
 
         self.msg = f"Subject: {subject}\n\n{body}".encode('utf-8')
     
-    def emial(self, reciever, reciever_name):
+    def email(self, reciever, reciever_name):
         self.server = smtplib.SMTP('smtp.gmail.com', 587)
         self.server.ehlo()
         self.server.starttls()
@@ -114,7 +114,7 @@ class WebScraper():
         self.get_main_data()
         self.get_headings()
         self.create_message()
-        self.emial('recievers_email', 'recievers_name')
+        self.email('recievers_email', 'recievers_name')
 
 WebScraper = WebScraper()
 WebScraper.run()
